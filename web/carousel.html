@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neat Carousel</title>
+    <link rel="stylesheet" href="media/css/carousel.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<pre>.carousel[data-active=1]>(ul.box>li*3>lorem5)+(ol.box.page-control>[data-item=$]*3)</pre>
+
+<section>
+    <div class="carousel" data-active="1">
+        <ul class="box">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Corporis deserunt harum reiciendis unde!</li>
+            <li>Ea libero qui reiciendis soluta!</li>
+        </ul>
+        <ol class="box page-control">
+            <li data-item="1"></li>
+            <li data-item="2"></li>
+            <li data-item="3"></li>
+        </ol>
+    </div>
+</section>
+<script>
+    $(document).on('ready', function(){
+        $('.carousel ol.page-control li').on('click',function(){
+            $(this).parents('.carousel').attr('data-active', $(this).attr('data-item'));
+        });
+    });
+</script>
+</body>
+</html>

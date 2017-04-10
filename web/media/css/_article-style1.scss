@@ -1,0 +1,28 @@
+$pic-ratio : 1 / (4 / 3);
+
+.box.article{
+  > li{
+    width:100%;
+    overflow:hidden;
+
+    >.pic,
+    >.text{
+      float:left;
+      box-sizing: border-box;
+      width:50%;
+    }
+
+    &:nth-child(even){
+      >.pic,
+      >.text{
+        float:right;
+      }
+    }
+
+    >.text{
+      margin-top: (25% * $pic-ratio);
+      margin-bottom: (-25% * $pic-ratio);
+      transform: translate(0, -50%);
+    }
+  }
+}

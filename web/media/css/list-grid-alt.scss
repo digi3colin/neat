@@ -1,0 +1,38 @@
+.alt{
+  display:flex;
+  flex-flow: row;
+
+  > ul:nth-child(1),
+  > ul:nth-child(3)
+  {
+    flex: 0 1 25%;
+  }
+
+  > ul:nth-child(2){
+    flex: 0 1 50%;
+  }
+
+  .box.grid{
+    display:flex;
+    flex-flow:column wrap;
+    line-height: 0;
+
+    li{
+      width:100%;
+      padding: 5px;
+    }
+  }
+}
+
+.box.grid.alt{
+  display: flex;
+  flex-flow:column wrap;
+}
+
+.columns{
+  column-count:3;
+
+  .box li{
+    display: inline-block;
+  }
+}

@@ -1,0 +1,24 @@
+.not-active{
+  opacity: 0.6;
+}
+
+.active{
+  font-weight: bold;
+  opacity: 1;
+}
+
+//style for reflect active category
+[data-active-category="1"] ul.reflect-category > li:nth-child(1),
+[data-active-category="2"] ul.reflect-category > li:nth-child(2),
+[data-active-category="3"] ul.reflect-category > li:nth-child(3),
+[data-active-category="4"] ul.reflect-category > li:nth-child(4),
+[data-active-category="5"] ul.reflect-category > li:nth-child(5),
+[data-active-category="6"] ul.reflect-category > li:nth-child(6),
+[data-active-category="7"] ul.reflect-category > li:nth-child(7),
+[data-active-category="8"] ul.reflect-category > li:nth-child(8){
+  @extend .active;
+}
+
+ul.reflect-category > li{
+  @extend .not-active;
+}

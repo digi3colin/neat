@@ -1,0 +1,17 @@
+//IE10+
+$pic-ratio : 1 / (4 / 3);
+
+.box.teaser{
+  > li{
+    >.pic,
+    >.text{
+      box-sizing: border-box;
+      width:100%;
+    }
+
+    &:nth-child(even){
+      display: inline-flex;
+      flex-direction: column-reverse;
+    }
+  }
+}

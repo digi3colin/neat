@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Article</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="media/css/list-grid.css">
+    <link rel="stylesheet" href="media/css/article.css">
+    <link rel="stylesheet" href="media/css/carousel.css">
+
+    <style>
+        .pic{
+            height:0;
+            padding-bottom: 37.5%;
+            background: #777;
+            border-radius: 5px;
+        }
+        li:hover .pic{
+            background: #F33;
+        }
+
+        .text{
+            padding:0 1em;
+        }
+
+    </style>
+</head>
+<body>
+<pre>ul.box.article>(li>.pic+.text>lorem)*5</pre>
+
+<ul class="box article">
+    <li>
+        <div class="pic"></div>
+        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ducimus ex, inventore
+            laudantium, nostrum, perferendis quo recusandae repellat reprehenderit sit tempore temporibus voluptate!
+            Aliquid amet illum molestias quisquam sunt voluptatem!
+        </div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">
+            <div class="carousel" data-active="1">
+                <ul class="box">
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Aliquid itaque mollitia obcaecati similique?</li>
+                    <li>Aliquam earum quas recusandae voluptatum.</li>
+                </ul>
+                <ol class="box page-control">
+                    <li data-item="1"></li>
+                    <li data-item="2"></li>
+                    <li data-item="3"></li>
+                </ol>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Eaque, hic id incidunt molestiae molestias quaerat saepe temporibus totam! Accusamus aliquam,
+            aperiam consectetur eaque facilis, id illum inventore maxime, modi necessitatibus similique voluptates? Nisi
+            reiciendis sit sunt unde voluptates.
+        </div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Qui quisquam, quo? Debitis enim molestias perferendis provident quod quos, temporibus totam
+            voluptatem? Animi aut, eius eos error expedita id inventore maiores nesciunt odit quaerat, quis quisquam
+            rerum soluta. Quasi!
+        </div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Ad alias atque debitis dicta distinctio doloremque eligendi est facere facilis fugit illum,
+            iste minima minus nemo neque perferendis quaerat quam quisquam sit, totam ullam ut veniam veritatis vero
+            voluptatem.
+        </div>
+    </li>
+</ul>
+
+<hr>
+
+<ul class="box teaser grid">
+    <li>
+        <div class="pic"></div>
+        <div class="text">Lorem ipsum dolor sit amet.</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Aliquid ipsam provident similique. Consequuntur!</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Amet nobis pariatur quia voluptatum.</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Beatae reprehenderit, vel? Ab, sunt!</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Doloremque laboriosam magnam nisi voluptate?</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Facere laboriosam libero necessitatibus porro.</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Eligendi expedita harum reiciendis saepe?</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Consequatur expedita in libero minima?</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Aperiam ex natus reprehenderit sapiente.</div>
+    </li>
+    <li>
+        <div class="pic"></div>
+        <div class="text">Atque consequatur illum maxime qui.</div>
+    </li>
+</ul>
+
+<script>
+    $(document).on('ready', function(){
+        $('.carousel ol.page-control li').on('click',function(){
+            $(this).parents('.carousel').attr('data-active', $(this).attr('data-item'));
+        });
+    });
+</script>
+</body>
+</html>

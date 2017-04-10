@@ -1,0 +1,37 @@
+.table-responsive{
+  width:100%;
+  overflow: scroll;
+
+  table{
+    border-spacing: 0;
+    border-collapse: separate;
+
+    th{
+      background:#333;
+      color:#FFF;
+      font-weight:bold;
+      white-space: nowrap;
+    }
+
+    td{
+      white-space: nowrap;
+    }
+
+    th:nth-child(1),
+    td:nth-child(1){
+      position: fixed;
+      width:50px;
+      text-align: center;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2){
+      display:inline-table;
+      margin-left: 50px;
+    }
+
+    td{
+      background: #FFF;
+    }
+  }
+}
