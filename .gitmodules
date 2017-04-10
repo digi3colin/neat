@@ -1,6 +1,6 @@
 [submodule "web/media/vendor/Font-Awesome"]
 	path = web/media/vendor/Font-Awesome
 	url = https://github.com/FortAwesome/Font-Awesome.git
-[submodule "Semantic-UI-CSS"]
-	path = Semantic-UI-CSS
+[submodule "web/media/vendor/Semantic-UI-CSS"]
+	path = web/media/vendor/Semantic-UI-CSS
 	url = https://github.com/Semantic-Org/Semantic-UI-CSS.git
