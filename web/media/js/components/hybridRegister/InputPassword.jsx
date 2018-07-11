@@ -1,5 +1,4 @@
 import React from 'react';
-import PageControl from '../Carousel/PageControl.jsx';
 import Form from "../uiElements/Form";
 import ErrorMessage from "../uiElements/ErrorMessage";
 import ButtonSubmit from "../uiElements/ButtonSubmit";
@@ -28,11 +27,11 @@ export default class InputPassword extends Form{
           <input type="hidden" name="destination" value=""/>
           <input type="hidden" name="code" value={this.props.code} />
           <div className="ui left icon input"><input title="nickname" name="nickname" type="text" placeholder="暱稱" autoComplete="off" required="required" disabled={this.state.isLoading} defaultValue={this.props.defaultValue} onChange={this.onNicknameChange}/><i className="user icon"/></div>
-          <div className="br"></div>
+          <div className="br"/>
           <div className="ui left icon input"><input title="password" name="password" type="password" placeholder="密碼" autoComplete="new-password" required="required" disabled={this.state.isLoading}/><i className="lock icon"/></div>
-          <div className="br"></div>
+          <div className="br"/>
           <ButtonSubmit isLoading={this.state.isLoading}>提交</ButtonSubmit>
-          <div className="br"></div>
+          <div className="br"/>
           <ErrorMessage message={this.state.error} />
         </form>
       </div>

@@ -7,14 +7,16 @@ export default class Resend extends Form{
   onResult(data){
     super.onResult(data);
     this.props.onResult(data);
-    if(data.status == 'success'){
-      this.setState({
-        success: "確認電郵已寄出"
-      });
+    if(data.status !== 'success')return;
 
-      clearTimeout(this.iid);
-      this.iid = setTimeout(()=>{this.setState({success:''})}, 4000);
-    }
+
+    this.setState({
+      success: "確認電郵已寄出"
+    });
+
+    clearTimeout(this.iid);
+    this.iid = setTimeout(()=>{this.setState({success:''})}, 4000);
+
   }
 
   render(){

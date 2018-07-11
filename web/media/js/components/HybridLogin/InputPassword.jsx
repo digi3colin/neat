@@ -17,11 +17,11 @@ export default class InputPassword extends Form{
         <form method="post" action={this.state.urlBase+this.props.action} autoComplete="off" onSubmit={this.onSubmit}>
           <input type="hidden" name="destination" value=""/>
           <div className="ui left icon input"><input title="email" name="username" type="email" placeholder="電郵地址" autoComplete="off" required="required" disabled={this.state.isLoading} defaultValue={this.props.defaultEmail}/><i className="mail icon"/></div>
-          <div className="br"></div>
+          <div className="br"/>
           <div className="ui left icon input"><input title="password" name="password" type="password" placeholder="密碼" autoComplete="new-password" required="required" disabled={this.state.isLoading}/><i className="lock icon"/></div>
-          <div className="br"></div>
+          <div className="br"/>
           <ButtonSubmit isLoading={this.state.isLoading}>登入</ButtonSubmit>
-          <div className="br"></div>
+          <div className="br"/>
           <PageControl className="forgot-password" page="3" onPageChange={this.props.onPageChange}>
             <a href="/user/reset_password">忘記密碼？</a>
           </PageControl>

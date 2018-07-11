@@ -3,7 +3,6 @@
  */
 
 import React from 'react';
-import PageControl from '../Carousel/PageControl';
 import ButtonFacebookLogin from '../uiElements/ButtonFacebookLogin';
 import Form from "../uiElements/Form";
 import ErrorMessage from "../uiElements/ErrorMessage"

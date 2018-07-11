@@ -98,20 +98,20 @@ export default connect(
   dispatch => {
     return {
       onPageChange: (page) => {
-        dispatch({type: "CHANGE_PAGE", value: page});
+        dispatch({type: "CHANGE_PAGE", payload: page});
       },
       onRegister: (data) => {
-        if(data.status == 'success'){
-          dispatch({type: "CHANGE_STEP", value: 2});
-          dispatch({type: "CHANGE_NICKNAME", value: data.nickname});
-        }
+        if(data.status !== 'success')return;
+
+        dispatch({type: "CHANGE_STEP", payload: 2});
+        dispatch({type: "CHANGE_NICKNAME", payload: data.nickname});
       },
       onResendConfirmation: (data) =>{
         console.log(data);
       },
 
       onNicknameChange:(value) =>{
-        dispatch({type: "CHANGE_NICKNAME", value: value});
+        dispatch({type: "CHANGE_NICKNAME", payload: value});
       },
 
       onSignedIn:(data)=>{

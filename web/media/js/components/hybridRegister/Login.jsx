@@ -40,7 +40,7 @@ export default class Login extends React.Component{
   }
 
   render(){
-    const firstTab = (this.props.loginMethod == "facebook")?
+    const firstTab = (this.props.loginMethod === "facebook")?
       (<FacebookLogin action="user/login_submit" onSignedIn={this.onSignedIn}/>) :
       (<InputPassword  onPageChange={this.onPageChange} action="user/login_submit" onSignedIn={this.onSignedIn} defaultEmail={this.props.defaultEmail}/>);
 

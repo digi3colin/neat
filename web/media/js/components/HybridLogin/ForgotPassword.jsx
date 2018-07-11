@@ -20,32 +20,32 @@ export default class ForgotPassword extends Form {
             <div>
                 <h3><i className="help circle icon" />忘記密碼</h3>
                 <div className="ui ordered steps alt">
-                    <div className={"step"+ (this.props.step == 1 ? " active": (this.props.step > 1)? " completed": "")}>
+                    <div className={"step"+ (this.props.step === 1 ? " active": (this.props.step > 1)? " completed": "")}>
                         <div className="content">
-                            <div className="title">填寫電⁠郵地⁠址</div>
+                            <div className="title">填寫電郵地址</div>
                             <div className="description">請填寫註冊的電郵地址</div>
                         </div>
                     </div>
-                    <div className={"step"+ (this.props.step == 2 ? " active": (this.props.step > 2)? " completed": "")}>
+                    <div className={"step"+ (this.props.step === 2 ? " active": (this.props.step > 2)? " completed": "")}>
                         <div className="content">
-                            <div className="title">電郵驗⁠証</div>
+                            <div className="title">電郵驗証</div>
                             <div className="description">檢查你的電郵</div>
                         </div>
                     </div>
-                    <div className={"step"+ (this.props.step == 3 ? " active": (this.props.step > 3)? " completed": "")}>
+                    <div className={"step"+ (this.props.step === 3 ? " active": (this.props.step > 3)? " completed": "")}>
                         <div className="content">
-                            <div className="title">確認電⁠郵驗⁠証</div>
+                            <div className="title">確認電郵驗証</div>
                             <div className="description">按下電郵內的驗証連結</div>
                         </div>
                     </div>
-                    <div className={"step"+ (this.props.step == 4 ? " active": (this.props.step > 4)? " completed": "")}>
+                    <div className={"step"+ (this.props.step === 4 ? " active": (this.props.step > 4)? " completed": "")}>
                         <div className="content">
-                            <div className="title">輸入新密⁠碼</div>
-                            <div className="description"></div>
+                            <div className="title">輸入新密碼</div>
+                            <div className="description"/>
                         </div>
                     </div>
                 </div>
-                <div className="br"></div>
+                <div className="br"/>
                 {this.props.step > 1 ? "" : form}
                 <ErrorMessage message={this.state.error} />
             </div>

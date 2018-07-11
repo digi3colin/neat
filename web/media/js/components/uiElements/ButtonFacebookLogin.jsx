@@ -1,4 +1,5 @@
 import React from "react";
+import FB from "fb";
 
 export default class ButtonFacebookLogin extends React.Component{
   constructor(props){
@@ -6,6 +7,20 @@ export default class ButtonFacebookLogin extends React.Component{
     this.onClick = this.onClick.bind(this);
     this.onConnectFail = this.onConnectFail.bind(this);
     this.onConnected = this.onConnected.bind(this);
+
+    window.fbAsyncInit = () => FB.init({
+      appId      : props.appId,
+      xfbml      : false,
+      version    : 'v3.0'
+    });
+
+    ((d, s, id) => {
+      let js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'facebook-jssdk');
   }
 
   onClick(e){
@@ -16,7 +31,7 @@ export default class ButtonFacebookLogin extends React.Component{
       FB.getLoginStatus((response)=>{
         this.statusChangeCallback(response);
       });
-    });
+    }, {scope: 'email'});
 
     if(!this.props.onClick)return;
     this.props.onClick(e);

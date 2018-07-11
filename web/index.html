@@ -5,10 +5,64 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-signin-client_id" content="551399057805-rf7vsed2872u6m10vjsi8knm18cou8kc.apps.googleusercontent.com">
   <title>Document</title>
   <script data-main="media/js/home" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://unpkg.com/@microsoft/microsoft-graph-client@1.0.0/lib/graph-js-sdk-web.js"></script>
+  <script src="https://cdn.apple-cloudkit.com/ck/2/cloudkit.js"></script>
+  <script>
+    function onSignIn(x){
+      console.log(x);
+    }
+
+    //microsoft
+    var authEndpoint = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?';
+    var redirectUri = 'https://neat.qoro.me/auth/';
+    var appId = '24fdffcb-dde8-4d9a-86ed-352f77f188e9';
+    var scopes = 'openid profile User.Read Mail.Read';
+
+    function buildAuthUrl() {
+      // Generate random values for state and nonce
+      sessionStorage.authState = guid();
+      sessionStorage.authNonce = guid();
+
+      var authParams = {
+        response_type: 'id_token token',
+        client_id: appId,
+        redirect_uri: redirectUri,
+        scope: scopes,
+        state: sessionStorage.authState,
+        nonce: sessionStorage.authNonce,
+        response_mode: 'fragment'
+      };
+
+      const params = Object.keys(authParams).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(authParams[k])
+      }).join('&');
+
+      return authEndpoint + params;
+    }
+
+    function guid() {
+      var cryptObj = window.crypto || window.msCrypto; // For IE11
+      var buf = new Uint16Array(8);
+      cryptObj.getRandomValues(buf);
+      function s4(num) {
+        var ret = num.toString(16);
+        while (ret.length < 4) {
+          ret = '0' + ret;
+        }
+        return ret;
+      }
+      return s4(buf[0]) + s4(buf[1]) + '-' + s4(buf[2]) + '-' + s4(buf[3]) + '-' +
+        s4(buf[4]) + '-' + s4(buf[5]) + s4(buf[6]) + s4(buf[7]);
+    }
+
+  </script>
 </head>
 <body>
   <div id="root"></div>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
 </body>
 </html>

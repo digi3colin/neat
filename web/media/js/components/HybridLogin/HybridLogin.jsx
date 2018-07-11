@@ -73,31 +73,31 @@ export default connect(
   dispatch => {
     return {
       onSignedIn : (data) => {
-        if(data.status == 'success'){
-          dispatch({type:"CHANGE_LOGIN_STATE", value: true });
-          dispatch({type:"UPDATE_USER", value: data});
+        if(data.status === 'success'){
+          dispatch({type:"CHANGE_LOGIN_STATE", payload: true });
+          dispatch({type:"UPDATE_USER", payload: data});
         }
       },
       onSignedOut : (data) => {
-        dispatch({type:"CHANGE_PAGE", value:1});
-        dispatch({type:"CHANGE_LOGIN_STATE", value:(data.status != 'success')});
-        dispatch({type:"SET_USER_NAME", value: null});
-        dispatch({type:"SET_NICK_NAME", value: null});
-        dispatch({type:"SET_CONTRIBUTOR_KEY", value: null});
+        dispatch({type:"CHANGE_PAGE", payload:1});
+        dispatch({type:"CHANGE_LOGIN_STATE", payload:(data.status !== 'success')});
+        dispatch({type:"SET_USER_NAME", payload: null});
+        dispatch({type:"SET_NICK_NAME", payload: null});
+        dispatch({type:"SET_CONTRIBUTOR_KEY", payload: null});
       },
 
       onPageChange : (page) => {
-        dispatch({type: "CHANGE_PAGE", value: page});
-        dispatch({type: "CHANGE_INVITE_SUCCESS", value: false});
-        dispatch({type: "CHANGE_FORGOT_SENT", value: false});
+        dispatch({type: "CHANGE_PAGE", payload: page});
+        dispatch({type: "CHANGE_INVITE_SUCCESS", payload: false});
+        dispatch({type: "CHANGE_FORGOT_SENT", payload: false});
       },
 
       onInviteSuccess : (data) => {
-        dispatch({type: "CHANGE_INVITE_SUCCESS", value: data.status});
+        dispatch({type: "CHANGE_INVITE_SUCCESS", payload: data.status});
       },
 
       onForgotSent : (data) => {
-        dispatch({type: "CHANGE_FORGOT_SENT", value: data.status});
+        dispatch({type: "CHANGE_FORGOT_SENT", payload: data.status});
       }
     }
   }
